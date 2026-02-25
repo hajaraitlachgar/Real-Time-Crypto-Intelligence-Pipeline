@@ -4,7 +4,6 @@ import json
 from datetime import datetime
 import time
 
-# Kafka config نفس ديال Binance
 conf = {
     'bootstrap.servers': 'pkc-619z3.us-east1.gcp.confluent.cloud:9092',
     'security.protocol': 'SASL_SSL',
@@ -35,7 +34,7 @@ while True:
     articles = fetch_news()
     for article in articles:
         news_event = {
-            "symbol": "BTCUSDT",  # أو ETHUSDT حسب title أو mapping
+            "symbol": "BTCUSDT", 
             "title": article['title'],
             "source": article['source']['name'],
             "publishedAt": article['publishedAt'],
